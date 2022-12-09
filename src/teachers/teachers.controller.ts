@@ -1,9 +1,12 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { TeachersService } from './services/teachers.service';
 
 @ApiTags('Teachers')
 @Controller('teachers')
 export class TeachersController {
+  constructor(private readonly teachersService: TeachersService) {}
+
   @Get()
   @ApiOperation({ summary: 'Método para obtener todos los docentes.' })
   getAll() {
