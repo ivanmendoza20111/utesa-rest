@@ -24,7 +24,7 @@ export class StudentsController {
   }
 
   @Get('/:code')
-  @ApiOperation({ summary: 'Método para obtener los estudiantes por Id.' })
+  @ApiOperation({ summary: 'Método para obtener los estudiantes por Code.' })
   @ApiOkResponse({
     isArray: true,
     status: 200,

@@ -24,7 +24,7 @@ export class TeachersController {
   }
 
   @Get('/:code')
-  @ApiOperation({ summary: 'Método para obtener un solo docente por Id.' })
+  @ApiOperation({ summary: 'Método para obtener un solo docente por Code.' })
   @ApiOkResponse({
     isArray: true,
     status: 200,
