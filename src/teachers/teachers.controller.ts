@@ -13,6 +13,6 @@ export class TeachersController {
   @Get('/:code')
   @ApiOperation({ summary: 'Método para obtener un solo docente por Id.' })
   get(@Param('code') code: string) {
-    return `Teachers Coódigo: ${code}`;
+    return `Teachers Code: ${code}`;
   }
 }
