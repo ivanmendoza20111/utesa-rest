@@ -10,9 +10,9 @@ export class TeachersController {
     return [];
   }
 
-  @Get('/:id')
+  @Get('/:code')
   @ApiOperation({ summary: 'Método para obtener un solo docente por Id.' })
-  get(@Param('id') id: number) {
-    return `Teachers Id: ${id}`;
+  get(@Param('code') code: string) {
+    return `Teachers Coódigo: ${code}`;
   }
 }

@@ -10,9 +10,9 @@ export class StudentsController {
     return [];
   }
 
-  @Get('/:id')
+  @Get('/:code')
   @ApiOperation({ summary: 'Método para obtener los estudiantes por Id.' })
-  get(@Param('id') id: number) {
-    return `Students Id: ${id}`;
+  get(@Param('code') code: string) {
+    return `Students Código: ${code}`;
   }
 }

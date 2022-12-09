@@ -5,7 +5,9 @@ import { AppClusterService } from './common/cluster.service';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, {
+    cors: true,
+  });
 
   const configService = app.get(ConfigService);
 
