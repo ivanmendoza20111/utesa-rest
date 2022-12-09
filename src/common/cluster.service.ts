@@ -6,8 +6,6 @@ const numCPUs = os.cpus().length;
 
 @Injectable()
 export class AppClusterService {
-  constructor(private readonly configService: ConfigService) {}
-
   static clusterize(callback: Function): void {
     const cluster = require('cluster');
     if (cluster.isMaster && process.env.NODE_ENV !== 'DEV') {

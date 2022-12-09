@@ -6,10 +6,14 @@ import { AppService } from './app.service';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: ['.env'],
+    }),
     SequelizeModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
-        dialect: configService.get('DB_CONNECTION'),
+        dialect: configService.get('DB_CONNECTION') || 'postgres',
         host: configService.get('POSTGRES_DB_HOST'),
         port: configService.get('POSTGRES_DB_PORT'),
         username: configService.get('POSTGRES_USER'),
@@ -17,6 +21,7 @@ import { AppService } from './app.service';
         database: configService.get('POSTGRES_DB_NAME'),
         logging: configService.get('NODE_ENV') === 'DEV',
       }),
+
       inject: [ConfigService],
     }),
   ],
