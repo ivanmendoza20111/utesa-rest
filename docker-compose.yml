@@ -1,0 +1,17 @@
+services:
+  api:
+    restart: always
+    container_name: utesa-rest-api
+    build:
+      dockerfile: Dockerfile
+      context: .
+      # Only will build development stage from our dockerfile
+      target: development
+    volumes:
+      - .:/usr/src/app
+    env_file:
+      - .env
+    # Run a command against the development stage of the image
+    command: npm run start:dev
+    ports:
+      - ${PORT}:${PORT}
