@@ -26,6 +26,8 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+Proyecto para simular los estudiantes y docentes de la Universidad Tecnológica de Santiago (UTESA)
+
 ## Installation
 
 ```bash
