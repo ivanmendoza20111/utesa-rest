@@ -10,12 +10,12 @@ export class TeachersController {
   @Get()
   @ApiOperation({ summary: 'Método para obtener todos los docentes.' })
   getAll() {
-    return [];
+    return this.teachersService.getAll();
   }
 
   @Get('/:code')
   @ApiOperation({ summary: 'Método para obtener un solo docente por Id.' })
   get(@Param('code') code: string) {
-    return `Teachers Code: ${code}`;
+    return this.teachersService.findByCode(code);
   }
 }
