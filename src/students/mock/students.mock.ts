@@ -88,6 +88,7 @@ export const studentsMock = [
             startHour: '07:00 PM',
             endHour: '08:30 PM',
             day: 'Martes',
+            classroom: 'C204',
           },
         ],
       },
